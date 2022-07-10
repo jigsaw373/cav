@@ -38,6 +38,10 @@ func (app *application) serverErrorResponse(w http.ResponseWriter, r *http.Reque
 
 }
 
+func (app *application) failedValidationResponse(w http.ResponseWriter, r *http.Request, err error) {
+	app.errorResponse(w, r, http.StatusUnprocessableEntity, err)
+}
+
 func (app *application) badRequestResponse(w http.ResponseWriter, r *http.Request, err error) {
 	app.errorResponse(w, r, http.StatusBadRequest, err.Error())
 }
