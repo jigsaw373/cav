@@ -30,6 +30,7 @@ func getCryptoRegex(crypto string) (string, error) {
 		"xrp":   "^(r)[a-zA-Z0-9]{33}$",
 		"zcr":   "^(Z)[a-zA-Z0-9]{33}$",
 		"zec":   "^(t)[a-zA-Z0-9]{34}$",
+		"bnb":   "^(bnb)([a-z0-9]{39})$",
 	}
 
 	regex, ok := cryptoRegexMap[crypto]
