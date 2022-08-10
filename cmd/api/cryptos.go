@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"strings"
 
 	"github.com/jigsaw373/cav/internal/validator"
 )
@@ -18,6 +19,8 @@ func (app *application) validateAddressHandler(w http.ResponseWriter, r *http.Re
 		app.badRequestResponse(w, r, err)
 		return
 	}
+
+	c = strings.ToLower(c)
 
 	addr, err := app.readAddressParam(r)
 	if err != nil {
